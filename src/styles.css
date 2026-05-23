@@ -770,6 +770,50 @@ img { display: block; max-width: 100%; }
   border: 1px solid var(--line);
 }
 
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--line-strong);
+  transition: background 0.25s var(--ease), border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.project-link:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.28);
+  transform: translateY(-2px);
+}
+.project-link-live {
+  color: var(--bg);
+  background: var(--text);
+  border-color: var(--text);
+}
+.project-link-live:hover {
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+  box-shadow: 0 10px 24px rgba(255,255,255,0.18);
+}
+.live-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.25);
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
 /* ===== skills ===== */
 .skills-grid {
   display: grid;

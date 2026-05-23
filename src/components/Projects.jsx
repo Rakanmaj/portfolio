@@ -14,6 +14,8 @@ const projects = [
     org: "Full-Stack Project",
     desc: "A car rental platform with vehicle browsing, reservation management, and admin approval workflows. Features secure authentication and REST API integration across a React frontend and Express/PostgreSQL backend.",
     tags: ["React", "Node.js", "Express", "PostgreSQL"],
+    liveUrl: "https://bmw-rental-client-production.up.railway.app/",
+    highlight: "Live Demo",
   },
   {
     title: "Phishing Website Detection",

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
-export default function ProjectCard({ title, org, desc, tags = [], highlight, index = 0 }) {
+export default function ProjectCard({ title, org, desc, tags = [], highlight, liveUrl, repoUrl, index = 0 }) {
   const cardRef = useRef(null);
 
   function handleMouseMove(e) {
@@ -58,6 +58,38 @@ export default function ProjectCard({ title, org, desc, tags = [], highlight, in
               <span key={tag}>{tag}</span>
             ))}
           </div>
+
+          {(liveUrl || repoUrl) && (
+            <div className="project-links">
+              {liveUrl && (
+                <a
+                  href={liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-link project-link-live"
+                >
+                  <span className="live-dot" />
+                  Live demo
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none">
+                    <path d="M7 17L17 7M9 7h8v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+              )}
+              {repoUrl && (
+                <a
+                  href={repoUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-link"
+                >
+                  Source
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none">
+                    <path d="M7 17L17 7M9 7h8v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </motion.article>
