@@ -130,7 +130,10 @@ img { display: block; max-width: 100%; }
   margin: 0 auto;
   padding-top: 130px;
   padding-bottom: 80px;
+  position: relative;
+  z-index: 1;
 }
+.site-footer { position: relative; z-index: 1; }
 
 .scroll-progress {
   position: fixed;

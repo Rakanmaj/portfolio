@@ -387,7 +387,7 @@ export default function SpaceBackground() {
         left: 0,
         width: "100vw",
         height: "100vh",
-        zIndex: -1,
+        zIndex: 0,
         pointerEvents: "none",
         background: "radial-gradient(ellipse at top, #0a0d18 0%, #02030a 70%)",
       }}
