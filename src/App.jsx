@@ -6,17 +6,20 @@ import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Cursor from "./components/Cursor";
-import "./styles.css";
+import "./portfolio.css";
 
 function App() {
   return (
     <>
-      <Cursor />
-      <div className="ambient-bg" aria-hidden />
+      <a className="skip-link" href="#main-content">Skip to content</a>
+      <div className="page-background" aria-hidden>
+        <span className="background-orb background-orb-a" />
+        <span className="background-orb background-orb-b" />
+        <span className="background-grid" />
+      </div>
 
       <Navbar />
-      <main className="site-shell">
+      <main id="main-content" className="site-shell">
         <Hero />
         <About />
         <Projects />

@@ -1,23 +1,23 @@
 export default function Footer() {
   const year = new Date().getFullYear();
+
   return (
     <footer className="site-footer">
       <div className="footer-inner">
-        <div className="footer-brand">
+        <a href="#hero" className="footer-brand">
           <span className="footer-mark">RA</span>
-          <div>
+          <span>
             <strong>Rakan Alshamali</strong>
-            <span>Full-Stack Developer · Amman, Jordan</span>
-          </div>
-        </div>
+            <small>Full-stack developer · Amman, Jordan</small>
+          </span>
+        </a>
 
-        <div className="footer-links">
+        <nav className="footer-links" aria-label="Footer navigation">
           <a href="#about">About</a>
-          <a href="#projects">Projects</a>
+          <a href="#projects">Work</a>
           <a href="#skills">Skills</a>
-          <a href="#education">Education</a>
           <a href="#contact">Contact</a>
-        </div>
+        </nav>
 
         <div className="footer-meta">
           <span>© {year} Rakan Alshamali</span>
@@ -27,3 +27,4 @@ export default function Footer() {
     </footer>
   );
 }
+

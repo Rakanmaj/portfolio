@@ -1,92 +1,86 @@
 import { motion } from "framer-motion";
 
+const featured = ["React", "Next.js", "Node.js", "Express", "PostgreSQL", "Figma · Basics"];
+
 const groups = [
   {
-    title: "Languages",
-    items: ["JavaScript", "Java", "Python", "C", "PHP", "C#"],
+    title: "Frontend",
+    summary: "Responsive, accessible product interfaces",
+    items: ["React", "Next.js", "JavaScript", "HTML", "CSS", "Framer Motion", "GSAP"],
   },
   {
-    title: "Web Development",
-    items: ["React", "Node.js", "Express", "REST APIs", "HTML", "CSS"],
+    title: "Backend & APIs",
+    summary: "Secure business logic and integrations",
+    items: ["Node.js", "Express", "REST APIs", "Authentication", "Validation", "Multi-tenancy"],
   },
   {
-    title: "Databases",
-    items: ["PostgreSQL", "MySQL"],
+    title: "Data & languages",
+    summary: "Structured data and core programming",
+    items: ["PostgreSQL", "MySQL", "Java", "C", "Python", "C#"],
   },
   {
-    title: "Data & Tooling",
-    items: ["Power BI", "Git", "GitHub", "Railway"],
+    title: "Design & delivery",
+    summary: "From interface planning to production",
+    items: ["Figma · Basics", "Git", "GitHub", "Railway", "Responsive Design", "Power BI"],
   },
-];
-
-const soft = [
-  "Problem Solving",
-  "Teamwork",
-  "Communication",
-  "Adaptability",
-  "Time Management",
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="section-block">
+    <section id="skills" className="section-block skills-section">
       <motion.div
-        className="section-heading"
+        className="section-heading section-heading-split"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.25 }}
-        transition={{ duration: 0.7 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.65 }}
       >
-        <p className="eyebrow">03 — Toolkit</p>
-        <h2 className="section-title">Skills shaped by real projects.</h2>
+        <div>
+          <p className="eyebrow">03 / Capabilities</p>
+          <h2 className="section-title">A practical toolkit<br />for shipping products.</h2>
+        </div>
         <p className="section-subtitle">
-          A mix of programming, backend, frontend, database, and tooling
-          experience — picked up by building things, not just reading about them.
+          My toolkit spans the full path from basic interface design in Figma to
+          responsive frontend work, API architecture, relational data, and production deployment.
         </p>
       </motion.div>
 
+      <motion.div
+        className="featured-skills"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{ duration: 0.55 }}
+      >
+        {featured.map((skill, index) => (
+          <span key={skill}><small>{String(index + 1).padStart(2, "0")}</small>{skill}</span>
+        ))}
+      </motion.div>
+
       <div className="skills-grid">
-        {groups.map((group, gi) => (
-          <motion.div
+        {groups.map((group, index) => (
+          <motion.article
             key={group.title}
             className="skill-group"
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.6, delay: gi * 0.08 }}
+            transition={{ duration: 0.55, delay: index * 0.07 }}
           >
             <div className="skill-group-head">
-              <span className="skill-group-num">0{gi + 1}</span>
-              <h3>{group.title}</h3>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <h3>{group.title}</h3>
+                <p>{group.summary}</p>
+              </div>
             </div>
             <div className="skill-chips">
-              {group.items.map((item) => (
-                <span key={item} className="skill-chip">
-                  {item}
-                </span>
-              ))}
+              {group.items.map((item) => <span key={item}>{item}</span>)}
             </div>
-          </motion.div>
+          </motion.article>
         ))}
       </div>
-
-      <motion.div
-        className="soft-skills"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6 }}
-      >
-        <span className="soft-skills-label">Soft skills</span>
-        <div className="soft-skills-list">
-          {soft.map((s, i) => (
-            <span key={s}>
-              {s}
-              {i < soft.length - 1 && <em>·</em>}
-            </span>
-          ))}
-        </div>
-      </motion.div>
     </section>
   );
 }
+

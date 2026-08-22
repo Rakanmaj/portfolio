@@ -49,7 +49,10 @@ export default function Navbar() {
       <nav className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
         <a href="#hero" className="logo" onClick={() => setOpen(false)}>
           <span className="logo-mark">RA</span>
-          <span className="logo-text">Rakan Alshamali</span>
+          <span className="logo-copy">
+            <strong>Rakan Alshamali</strong>
+            <small>Full-stack developer</small>
+          </span>
         </a>
 
         <div className={`nav-links ${open ? "nav-open" : ""}`}>
@@ -59,22 +62,23 @@ export default function Navbar() {
               href={l.href}
               className={active === l.href ? "active" : ""}
               onClick={() => setOpen(false)}
+              aria-current={active === l.href ? "page" : undefined}
             >
               {l.label}
             </a>
           ))}
           <a
-            href="/Rakan_Alshamali_CV.pdf"
-            download="Rakan_Alshamali_CV.pdf"
+            href="#contact"
             className="nav-cta"
             onClick={() => setOpen(false)}
           >
-            Resume
+            Let's talk
           </a>
         </div>
 
         <button
           aria-label="Toggle menu"
+          aria-expanded={open}
           className={`nav-toggle ${open ? "is-open" : ""}`}
           onClick={() => setOpen((v) => !v)}
         >

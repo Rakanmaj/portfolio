@@ -2,73 +2,42 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <section id="contact" className="section-block">
+    <section id="contact" className="section-block contact-section">
       <motion.div
         className="contact-panel"
-        initial={{ opacity: 0, y: 28 }}
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.7 }}
       >
         <div className="contact-copy">
-          <p className="eyebrow">05 — Contact</p>
-          <h2 className="section-title">
-            Let's build <span className="gradient-text">something</span>.
-          </h2>
-          <p className="section-subtitle">
-            I'm actively building my skills in full-stack development and open
-            to internships, junior roles, and collaboration on real systems.
-            The fastest way to reach me is email.
+          <p className="eyebrow">05 / Contact</p>
+          <h2>Have a product to build?<br /><em>Let's make it real.</em></h2>
+          <p>
+            I'm open to internships, junior full-stack roles, and collaborations on
+            useful software. Send me a message and I'll get back to you.
           </p>
-
-          <a
-            href="mailto:rakanshamali77@gmail.com"
-            className="btn btn-primary contact-cta"
-          >
-            Email me
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none">
-              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+          <a href="mailto:rakanshamali77@gmail.com" className="btn btn-light">
+            Start a conversation <span aria-hidden>↗</span>
           </a>
         </div>
 
-        <div className="contact-items">
-          <a href="mailto:rakanshamali77@gmail.com" className="contact-item">
-            <span className="contact-key">Email</span>
-            <strong>rakanshamali77@gmail.com</strong>
+        <div className="contact-directory">
+          <a href="mailto:rakanshamali77@gmail.com">
+            <span>Email</span><strong>rakanshamali77@gmail.com</strong><i>↗</i>
           </a>
-
-          <a href="tel:+962778312946" className="contact-item">
-            <span className="contact-key">Phone</span>
-            <strong dir="ltr">+962 77 831 2946</strong>
+          <a href="tel:+962778312946">
+            <span>Phone</span><strong dir="ltr">+962 77 831 2946</strong><i>↗</i>
           </a>
-
-          <a
-            href="https://linkedin.com/in/rakan-alshamali"
-            target="_blank"
-            rel="noreferrer"
-            className="contact-item"
-          >
-            <span className="contact-key">LinkedIn</span>
-            <strong>linkedin.com/in/rakan-alshamali</strong>
+          <a href="https://linkedin.com/in/rakan-alshamali" target="_blank" rel="noreferrer">
+            <span>LinkedIn</span><strong>rakan-alshamali</strong><i>↗</i>
           </a>
-
-          <a
-            href="https://github.com/Rakanmaj"
-            target="_blank"
-            rel="noreferrer"
-            className="contact-item"
-          >
-            <span className="contact-key">GitHub</span>
-            <strong>github.com/Rakanmaj</strong>
+          <a href="https://github.com/Rakanmaj" target="_blank" rel="noreferrer">
+            <span>GitHub</span><strong>Rakanmaj</strong><i>↗</i>
           </a>
-
-          <div className="contact-item">
-            <span className="contact-key">Location</span>
-            <strong>Amman, Jordan</strong>
-          </div>
         </div>
       </motion.div>
     </section>
   );
 }
+
